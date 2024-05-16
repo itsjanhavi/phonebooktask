@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid black;
+            width: 300px;
+            height: 180px;
+            justify-content: center; 
+            align-items: center; 
+            margin: 0 auto;
+            margin-top: 10px;
+            
+        }
+        .colorbox{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            margin-left: 90px;
+        }
+        .btn{
+            margin: 5px;
+            width: 80px;
+            height: 40px;
+            margin-left: 100px;
+        }
+        h2{
+            margin: 0 auto;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>CHENGING COLOR BOX</h2>
+    <div class="box">
+        <div class="colorbox"></div>
+        <button class="btn">click me</button>
+    </div>
+    <script>
+       let colorbox = document.querySelector(".colorbox");
+       let button = document.querySelector(".btn");
+
+       let colors = ["red", "green", "yellow", "purple", "orange"]; 
+       let count = 0;
+
+       button.addEventListener("click", () => {
+       colorbox.style.backgroundColor = colors[count];
+       count  = (count + 1) % colors.length;
+});
+  
+    </script>
+</body>
+</html>

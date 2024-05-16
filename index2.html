@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            width: 500px;
+            height: 200px;
+            justify-content: center; 
+            align-items: center; 
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        h3 {
+            text-align: center;
+        }
+        .form1 {
+          padding: 10px;
+        }
+        .phone {
+            margin: 10px;
+        }
+        .Email {
+            margin: 10px;
+        }
+        .btn {
+            float: right;
+            padding: 5px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>Enter Information</h3>
+        <form class="form1" id="loginForm" onsubmit="CreateInformation(event)">
+            <label for="phoneNumber">Phone Number:</label>
+            <input class="phone" type="text" id="phoneNumber" name="phoneNumber" required><br>
+            
+            <label for="email">Email:</label>
+            <input class="Email" type="email" id="email" name="email" required><br>
+            
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        function CreateInformation(event) {
+            event.preventDefault();
+
+            let phone = document.getElementById('phoneNumber').value;
+            let email = document.getElementById('email').value;
+
+            console.log('Phone Number:', phone);
+            console.log('Email:', email);
+
+            let resultHtml = `<p>Phone Number: ${phone}</p><p>Email: ${email}</p>`;
+
+            document.getElementById('result').innerHTML = resultHtml;
+        }
+    </script>
+</body>
+</html>
